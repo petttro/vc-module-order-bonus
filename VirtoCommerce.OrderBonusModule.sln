@@ -1,0 +1,64 @@
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32630.192
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{E6C71232-9D58-4C9A-BF89-F0114997BA85}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VirtoCommerce.OrderBonusModule.Web", "src\VirtoCommerce.OrderBonusModule.Web\VirtoCommerce.OrderBonusModule.Web.csproj", "{49A2D0D2-B2A3-4DA9-9BA7-66059E44F213}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VirtoCommerce.OrderBonusModule.Data", "src\VirtoCommerce.OrderBonusModule.Data\VirtoCommerce.OrderBonusModule.Data.csproj", "{D26F03E6-E250-4994-93B7-BADB90CB351D}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VirtoCommerce.OrderBonusModule.Core", "src\VirtoCommerce.OrderBonusModule.Core\VirtoCommerce.OrderBonusModule.Core.csproj", "{79D022B4-8B17-4135-A870-048EF6C206CB}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{ADDAFAD4-4149-4373-A92E-BE759059CA06}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VirtoCommerce.OrderBonusModule.Tests", "tests\VirtoCommerce.OrderBonusModule.Tests\VirtoCommerce.OrderBonusModule.Tests.csproj", "{25D14C6B-8AFC-408F-999C-929015A6589F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{31755652-DADE-4F43-971C-C08DCA2A3412}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+		.gitignore = .gitignore
+		Directory.Build.props = Directory.Build.props
+		LICENSE = LICENSE
+		module.ignore = module.ignore
+		README.md = README.md
+		VirtoCommerce.OrderBonusModule.sln.DotSettings = VirtoCommerce.OrderBonusModule.sln.DotSettings
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{49A2D0D2-B2A3-4DA9-9BA7-66059E44F213}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{49A2D0D2-B2A3-4DA9-9BA7-66059E44F213}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{49A2D0D2-B2A3-4DA9-9BA7-66059E44F213}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{49A2D0D2-B2A3-4DA9-9BA7-66059E44F213}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D26F03E6-E250-4994-93B7-BADB90CB351D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D26F03E6-E250-4994-93B7-BADB90CB351D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D26F03E6-E250-4994-93B7-BADB90CB351D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D26F03E6-E250-4994-93B7-BADB90CB351D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{79D022B4-8B17-4135-A870-048EF6C206CB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{79D022B4-8B17-4135-A870-048EF6C206CB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{79D022B4-8B17-4135-A870-048EF6C206CB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{79D022B4-8B17-4135-A870-048EF6C206CB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{25D14C6B-8AFC-408F-999C-929015A6589F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{25D14C6B-8AFC-408F-999C-929015A6589F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{25D14C6B-8AFC-408F-999C-929015A6589F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{25D14C6B-8AFC-408F-999C-929015A6589F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{49A2D0D2-B2A3-4DA9-9BA7-66059E44F213} = {E6C71232-9D58-4C9A-BF89-F0114997BA85}
+		{D26F03E6-E250-4994-93B7-BADB90CB351D} = {E6C71232-9D58-4C9A-BF89-F0114997BA85}
+		{79D022B4-8B17-4135-A870-048EF6C206CB} = {E6C71232-9D58-4C9A-BF89-F0114997BA85}
+		{25D14C6B-8AFC-408F-999C-929015A6589F} = {ADDAFAD4-4149-4373-A92E-BE759059CA06}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {244DEE10-1978-4867-BC00-C97EE59B4FCF}
+	EndGlobalSection
+EndGlobal

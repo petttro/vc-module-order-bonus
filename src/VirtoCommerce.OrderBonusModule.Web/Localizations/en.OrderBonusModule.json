@@ -1,0 +1,40 @@
+{
+  "OrderBonusModule": {
+    "blades": {
+      "hello-world": {
+        "title": "Hello world blade"
+      }
+    }
+  },
+  "permissions": {
+    "OrderBonusModule:access": "Open OrderBonusModule menu",
+    "OrderBonusModule:create": "Create OrderBonusModule related data",
+    "OrderBonusModule:read": "View OrderBonusModule related data",
+    "OrderBonusModule:update": "Update OrderBonusModule related data",
+    "OrderBonusModule:delete": "Delete OrderBonusModule related data"
+  },
+  "settings": {
+    "OrderBonusModule": {
+      "OrderBonusModuleEnabled": {
+        "title": "OrderBonusModule Enabled",
+        "description": "OrderBonusModule Enabled setting"
+      },
+      "OrderBonusModulePassword": {
+        "title": "OrderBonusModule Password",
+        "description": "OrderBonusModule Password setting"
+      }
+    },
+    "Stores.BonusPercent.Normal": {
+      "title": "Normal Customer Bonus %",
+      "description": "Order price percent will be applied as bonus"
+    },
+    "Stores.BonusPercent.Vip": {
+      "title": "VIP Customer Bonus %",
+      "description": "Order price percent will be applied as bonus"
+    },
+    "Stores.BonusPercent.SuperVip": {
+      "title": "Super VIP Customer Bonus %",
+      "description": "Order price percent will be applied as bonus"
+    }
+  }
+}
