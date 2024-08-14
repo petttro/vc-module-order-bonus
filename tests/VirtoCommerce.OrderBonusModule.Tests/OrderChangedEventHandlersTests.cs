@@ -53,20 +53,40 @@ public class OrderChangedEventHandlersTests : IDisposable
         };
         var orderChangedEvent = new OrderChangedEvent(changedEntries);
 
-        _settingsManagerMock
-            .Setup(s => s.GetObjectSettingAsync(ModuleConstants.Settings.Bonus.BonusPercentNormal.Name, null, null))
-            .ReturnsAsync(new ObjectSettingEntry());
-
-        _settingsManagerMock
-           .Setup(s => s.GetObjectSettingAsync(ModuleConstants.Settings.Bonus.BonusPercentVip.Name, null, null))
-           .ReturnsAsync(new ObjectSettingEntry());
-
-        _settingsManagerMock
-           .Setup(s => s.GetObjectSettingAsync(ModuleConstants.Settings.Bonus.BonusPercentSuperVip.Name, null, null))
-           .ReturnsAsync(new ObjectSettingEntry());
+        SetupLoadSetting();
 
         _bonusServiceMock
             .Setup(b => b.SaveChangesAsync(It.Is<List<Bonus>>(l => l[0].BonusTotal == 50)))
+            .Returns(Task.CompletedTask);
+
+        await _eventHandler.Handle(orderChangedEvent);
+    }
+
+    [Fact]
+    public async Task HandleEvent_NotCompletedStatus_NotAddBonus()
+    {
+        var newEntry = new CustomerOrder
+        {
+            SubTotal = 1000,
+            Status = ModuleConstants.CustomerOrder.Status.New
+        };
+
+        var oldEntry = new CustomerOrder
+        {
+            SubTotal = 1000,
+            Status = ModuleConstants.CustomerOrder.Status.New
+        };
+
+        var changedEntries = new List<GenericChangedEntry<CustomerOrder>>
+        {
+            new GenericChangedEntry<CustomerOrder>(newEntry, oldEntry, EntryState.Modified)
+        };
+        var orderChangedEvent = new OrderChangedEvent(changedEntries);
+
+        SetupLoadSetting();
+
+        _bonusServiceMock
+            .Setup(b => b.SaveChangesAsync(It.Is<List<Bonus>>(l => !l.Any())))
             .Returns(Task.CompletedTask);
 
         await _eventHandler.Handle(orderChangedEvent);
@@ -93,9 +113,20 @@ public class OrderChangedEventHandlersTests : IDisposable
         };
         var orderChangedEvent = new OrderChangedEvent(changedEntries);
 
+        SetupLoadSetting();       
+
+        _bonusServiceMock
+            .Setup(b => b.SaveChangesAsync(It.Is<List<Bonus>>(l => !l.Any())))
+            .Returns(Task.CompletedTask);
+
+        await _eventHandler.Handle(orderChangedEvent);
+    }
+
+    private void SetupLoadSetting()
+    {
         _settingsManagerMock
-            .Setup(s => s.GetObjectSettingAsync(ModuleConstants.Settings.Bonus.BonusPercentNormal.Name, null, null))
-            .ReturnsAsync(new ObjectSettingEntry());
+           .Setup(s => s.GetObjectSettingAsync(ModuleConstants.Settings.Bonus.BonusPercentNormal.Name, null, null))
+           .ReturnsAsync(new ObjectSettingEntry());
 
         _settingsManagerMock
            .Setup(s => s.GetObjectSettingAsync(ModuleConstants.Settings.Bonus.BonusPercentVip.Name, null, null))
@@ -104,12 +135,6 @@ public class OrderChangedEventHandlersTests : IDisposable
         _settingsManagerMock
            .Setup(s => s.GetObjectSettingAsync(ModuleConstants.Settings.Bonus.BonusPercentSuperVip.Name, null, null))
            .ReturnsAsync(new ObjectSettingEntry());
-
-        _bonusServiceMock
-            .Setup(b => b.SaveChangesAsync(It.Is<List<Bonus>>(l => !l.Any())))
-            .Returns(Task.CompletedTask);
-
-        await _eventHandler.Handle(orderChangedEvent);
     }
 
     public void Dispose()

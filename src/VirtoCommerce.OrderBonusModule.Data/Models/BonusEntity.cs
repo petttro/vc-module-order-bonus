@@ -32,7 +32,7 @@ public class BonusEntity : AuditableEntity, IDataEntity<BonusEntity, Bonus>
 
     public void Patch(BonusEntity target)
     {
-        throw new NotImplementedException();
+        target.Id = Id;
     }
 
     public Bonus ToModel(Bonus model)

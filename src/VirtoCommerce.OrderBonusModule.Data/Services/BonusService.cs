@@ -24,6 +24,6 @@ public class BonusService : CrudService<Bonus, BonusEntity, BonusChangingEvent, 
 
     protected override Task<IList<BonusEntity>> LoadEntities(IRepository repository, IList<string> ids, string responseGroup)
     {
-        throw new NotImplementedException();
+        return ((BonusRepository)repository).GetBonusesByIdsAsync(ids);
     }
 }

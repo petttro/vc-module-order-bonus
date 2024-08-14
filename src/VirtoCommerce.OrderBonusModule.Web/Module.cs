@@ -13,6 +13,7 @@ using VirtoCommerce.OrderBonusModule.Data.Handlers;
 using VirtoCommerce.OrderBonusModule.Data.Services;
 using VirtoCommerce.OrdersModule.Core.Events;
 using VirtoCommerce.Platform.Core.Events;
+using VirtoCommerce.StoreModule.Core.Model;
 
 namespace VirtoCommerce.OrderBonusModule.Web;
 
@@ -45,6 +46,7 @@ public class Module : IModule, IHasConfiguration
         // Register settings
         var settingsRegistrar = serviceProvider.GetRequiredService<ISettingsRegistrar>();
         settingsRegistrar.RegisterSettings(ModuleConstants.Settings.AllSettings, ModuleInfo.Id);
+        settingsRegistrar.RegisterSettingsForType(ModuleConstants.Settings.Bonus.AllSettings, nameof(Store));
 
         // Register permissions
         var permissionsRegistrar = serviceProvider.GetRequiredService<IPermissionsRegistrar>();

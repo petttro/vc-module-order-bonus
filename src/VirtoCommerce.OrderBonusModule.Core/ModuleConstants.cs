@@ -79,6 +79,7 @@ public static class ModuleConstants
         {
             public static readonly SettingDescriptor BonusPercentNormal = new SettingDescriptor
             {
+                DisplayName = "Normal Customer bonus %",
                 Name = "Stores.BonusPercent.Normal",
                 GroupName = "Store|Bonus",
                 ValueType = SettingValueType.Integer,
@@ -87,6 +88,7 @@ public static class ModuleConstants
 
             public static readonly SettingDescriptor BonusPercentVip = new SettingDescriptor
             {
+                DisplayName = "VIP Customer bonus %",
                 Name = "Stores.BonusPercent.Vip",
                 GroupName = "Store|Bonus",
                 ValueType = SettingValueType.Integer,
@@ -95,6 +97,7 @@ public static class ModuleConstants
 
             public static readonly SettingDescriptor BonusPercentSuperVip = new SettingDescriptor
             {
+                DisplayName = "Super VIP Customer bonus %",
                 Name = "Stores.BonusPercent.SuperVip",
                 GroupName = "Store|Bonus",
                 ValueType = SettingValueType.Integer,
